@@ -7,8 +7,8 @@ files = []
 for file in os.listdir():
     # avoid acciently locking out current progress
     if file == "decrypt.py" or file == "encrypt.py" or file == "key.txt":
-        pass
-    else:
+        continue
+    if os.path.isfile(file):
         files.append(file)
 
 print(files)
