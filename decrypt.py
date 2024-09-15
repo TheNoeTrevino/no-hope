@@ -6,7 +6,12 @@ files = []
 # TODO: make this also recursively decrypt like the encrypt file
 for file in os.listdir():
     # avoid acciently locking out current progress
-    if file == "decrypt.py" or file == "encrypt.py" or file == "key.txt":
+    if (
+        file == "decrypt.py"
+        or file == "encrypt.py"
+        or file == "key.txt"
+        or file == "README.md"
+    ):
         continue
     if os.path.isfile(file):
         files.append(file)

