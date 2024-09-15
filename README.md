@@ -1,24 +1,24 @@
 # How to get started
 
-Do not run this on your actual machine in a random directory!
+Do not run this on your actual machine in a random directory! It will encrypt anything that is not a directory and its kind of annoying to fix sometimes. (speaking from the experience of messing it up like 10 times in a row)
 
 You will also need to install python, which is very easy with linux, I think.
 
-Clone the repository:
+### Clone the repository:
 ```
 git clone https://github.com/TheNoeTrevino/no-hope.git
 ```
-I would prefer if we made branches and pull requests so things are easier to manage in the long run
+I would personally prefer if we made branches and pull requests so things are easier to manage in the long run, but we can talk about this.
 
 ## Usage
 
 Make a file called key.txt in the same directory the script is. It would look something like this:
 
 no-hope (folder)
-| decrypt.py
-| encrypt.py
-| key.txt
-| text.txt
+| decrypt.py<br>
+| encrypt.py<br>
+| key.txt<br>
+| text.txt<br>
 |_
 
 Make a file as a test, in this case test.txt, and fill it with some text, here is an example command:
@@ -27,15 +27,15 @@ echo 'This is not encrypted!' > test.txt
 ```
 Then run the encryption script. It will output this, in addition to opening the bitcoin website in your browser:
 ```
-$ python3 encrypt.py 
-['test.txt']
-b'0sU1m42-VAsvatbk3I1-77LQZQT_CFzIT2qK5U2irms='
-give me 1mil bitcoin OR ELSE!
+$ python3 encrypt.py
+Files to encrypt: ['test.txt']
+Give me one million bitcoin OR ELSE I WILL DELETE THE KEY FOREVER
+b'ET\xa3$\xdd\xbb\x90\xb8\x10\xed\xfa\x00\xa2\xbe\xbb\xa9\xc3Mr\x0c\xa8\xe7p>z\xd3\x01\xc8\x82\xfa\x05\xb4'
 ```
 Lets check if this worked
 ```
 $ cat test.txt 
-gAAAAABm5nmEzE9aOMrfwaKCP9iENTdyHdVYW4d0NRyO9TyuXoV8QSAzJ-xJvp6CCecLDMd0kpv64O8ySAAKO4Hcbc8XitN4YvLIFFDlGLB3_dh38rP3cw8=%   
+q��d���3�W	���fp�u��S�7�Wu����Sv�s�$��>dވ[����h�<A6Wl~k?}N�Ex"�S�5w�`���9%    
 ```
 These are the encrypted contents of the file!
 Now let us decrypt them by running the decryption script, which is also going to show us an array on files that have gotten decrypted
