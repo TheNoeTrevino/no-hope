@@ -20,7 +20,7 @@ for file in os.listdir():
     # TODO: if we want to lock out ALL the files,
     # maybe we can do a recursive function
     # if os.path.isdir(file):
-    # recurse
+    #    deleteFileInDir(file) # rename to something like path
     if os.path.isfile(file):
         files.append(file)
 
