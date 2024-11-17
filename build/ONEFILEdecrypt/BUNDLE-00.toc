@@ -1,3 +1,0 @@
-([('ONEFILEdecrypt',
-   '/Users/noetrevino/projects/no-hope/dist/ONEFILEdecrypt',
-   'EXECUTABLE')],)
