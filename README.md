@@ -21,6 +21,13 @@ no-hope (folder)
 | text.txt<br>
 |_
 
+Make a virtual environment:
+
+```
+python3 -m venv env
+pip3 install cryptogrgraphy
+```
+
 Make a file as a test, in this case test.txt, and fill it with some text, here is an example command:
 ```
 echo 'This is not encrypted!' > test.txt
