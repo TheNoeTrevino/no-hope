@@ -1,8 +1,11 @@
 import os
+from os.path import isdir
 import webbrowser
 from utilities import generate_key, encrypt
 
+
 files = []
+
 
 for file in os.listdir():
     # avoid locking ourselves out of programming
@@ -23,6 +26,31 @@ for file in os.listdir():
     #    deleteFileInDir(file) # rename to something like path
     if os.path.isfile(file):
         files.append(file)
+
+# def gather_files():
+#
+#     for file in os.listdir():
+#         # avoid locking ourselves out of programming
+#         # WARNING: DO NOT REMOVE THESE
+#         if (
+#             file == "decrypt.py"
+#             or file == "encrypt.py"
+#             or file == "utilities.py"
+#             or file == "key.txt"
+#             or file == "README.md"
+#             or file == ".gitignore"
+#         ):
+#             continue
+#         # only files not directories
+#         # TODO: if we want to lock out ALL the files,
+#         # maybe we can do a recursive function
+#         # if os.path.isdir(file):
+#         #    deleteFileInDir(file) # rename to something like path
+#         if os.path.isfile(file):
+#             files.append(file)
+#         if os.path.isdir(file):
+#             return
+
 
 print(files)
 

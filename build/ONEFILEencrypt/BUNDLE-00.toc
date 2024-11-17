@@ -1,0 +1,3 @@
+([('ONEFILEencrypt',
+   '/Users/noetrevino/projects/no-hope/dist/ONEFILEencrypt',
+   'EXECUTABLE')],)
