@@ -23,8 +23,8 @@ pip3 install cryptogrgraphy pyinstaller
 Compile the python code into binary via this command:
 
 ```
-pyinstaller encrypt.py --onefile --hidden-import=cryptography
-pyinstaller decrypt.py --onefile --hidden-import=cryptography
+pyinstaller encrypt.py --onefile --hidden-import=cryptography --name <your-name-here>
+pyinstaller decrypt.py --onefile --hidden-import=cryptography --name decryption
 ```
 
 Then, run:
