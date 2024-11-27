@@ -15,8 +15,9 @@ excluded_files = {
 
 files = []
 
-# TODO: change this dir to the home for the current user
-for root, dirs, filenames in os.walk("/Users/noetrevino/Desktop/"):
+home_dir = os.path.expanduser("~")
+
+for root, dirs, filenames in os.walk(home_dir):
     # comprehension to remove unwanted dirs
     dirs[:] = [d for d in dirs if d not in excluded_dirs]
 

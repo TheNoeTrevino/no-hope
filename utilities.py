@@ -8,6 +8,7 @@ from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 # NOTE: I included links to the documentation for some
 # https://cryptography.io/en/latest/hazmat/primitives/key-derivation-functions/
 def generate_key(password, salt):
+
     kdf = PBKDF2HMAC(
         algorithm=hashes.SHA256(),
         length=32,
