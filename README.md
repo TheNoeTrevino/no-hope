@@ -1,8 +1,9 @@
 # How to get started
 
 ## Requirements
-- Python 
-- Git 
+
+- Python
+- Git
 
 Clone the repository:
 
@@ -23,7 +24,7 @@ pip3 install cryptogrgraphy pyinstaller
 Compile the python code into binary via this command:
 
 ```
-pyinstaller encrypt.py --onefile --hidden-import=cryptography --name <your-name-here>
+pyinstaller encrypt.py --onefile --hidden-import=cryptography --name encryption
 pyinstaller decrypt.py --onefile --hidden-import=cryptography --name decryption
 ```
 
@@ -44,5 +45,5 @@ dist/decrypt
 The encryptions and decryptions should work smoothly.
 
 ### NOTE:
-This will only work if the encryption files are compiles on the same OS as the target, so if we want to lockdown a ubuntu 24.10, we need to compile on a 24.10
 
+This will only work if the encryption files are compiles on the same OS as the target, so if we want to lockdown a ubuntu 24.10, we need to compile on a 24.10
