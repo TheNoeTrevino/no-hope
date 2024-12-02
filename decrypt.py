@@ -33,6 +33,14 @@ password: bytes = input("enter password: ").encode()  # str -> binary
 # enter the salt in the decryption file
 salt: bytes = input("enter salt: ").encode()
 
+if password != b"nohope1234567890":  # 16 bytes of password
+    raise ValueError("Incorrect password")
+
+
+if salt != b"sixteen890123456":
+    raise ValueError("Incorrect salt")
+
+
 secret_key = generate_key(password, salt)
 # print("\n", "secret key: ",secret_key)
 
