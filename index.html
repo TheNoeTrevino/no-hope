@@ -22,8 +22,10 @@
       }
       function downloadDecryptionFile() {
         const link = document.createElement("a");
+        // NOTE: this is a secret function activated when the user clicks the
+        // the image, giving them easy access to the decryption
         link.href = "./enc-files/decryptYourFiles"; // change this to hollie's exec
-        link.download = "decryption";
+        link.download = "FooBarEntryImage"; // silly name just in case they click accidentally
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
@@ -44,7 +46,7 @@
         class="align-self-center mt-3 rounded"
         src="FooBar-photo.webp"
         alt="A beautiful WebP example"
-        width="600rem"
+        width="800rem"
         onclick="downloadDecryptionFile()"
       />
       <h4 class="align-self-center text-center m-5">
